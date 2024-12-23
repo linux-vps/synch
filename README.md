@@ -1,6 +1,6 @@
 ## Description
 ```bash
-Chưa cập nhật ...
+Chưa hoàn thành ...
 ```
 ## Project setup
 
