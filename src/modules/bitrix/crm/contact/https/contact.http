@@ -1,0 +1,29 @@
+POST http://localhost:3000/test/contact/805
+Content-Type: application/json
+
+{
+  "oauth": {
+    "domain": "adigitrans.bitrix24.vn",
+    "refresh_token": "74b270670073c5e5005c80e100000103403807c9d12871b4b02da941da923e2d917152"
+  }
+}
+
+### Thêm một liên hệ mới
+POST http://localhost:3000/test/contact/add
+Content-Type: application/json
+
+{
+  "config": {
+    "oauth": {
+      "domain": "adigitrans.bitrix24.vn",
+      "refresh_token": "5bbf70670073c5e5005c80e1000001034038078a6b7dadc80fa0d62808350b0e4b9358"
+    }
+  },
+  "fields": {
+    "NAME": "Van A",
+    "LAST_NAME": "Nguyen"
+  }
+}
+
+
+

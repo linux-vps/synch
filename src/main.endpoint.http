@@ -1,0 +1,44 @@
+### Chuyển hướng đến trang xác thực Google với domain
+GET http://localhost:3000/auth/google/domain0.com
+Accept: application/json 
+
+### Tạo mới Google Spreadsheet
+# Tạo spreadsheet với tiêu đề và các sheet mặc định (google-sheet.service.ts phần SHEET_CONFIGS)
+# Tự thêm spreadsheetId vào csdl
+POST http://localhost:3000/google-sheet
+Content-Type: application/json
+{ 
+    "domain": "domain0.com",
+    "title": "Test Spreadsheet 1"
+}
+
+### Lấy một domain theo domain
+GET http://localhost:3000/users/domain0.com
+Accept: application/json
+
+### Xóa SpreadsheetId khỏi domain
+DELETE http://localhost:3000/users/domain0.com/1bGVuzuZwQLVOGYmGo-PAcv37vIPitjugWq7y-tF7dwg
+
+###
+
+### Cập nhật tokens
+PATCH http://localhost:3000/users/tokens
+Content-Type: application/json
+
+{
+  "domain": "domain0.com",
+  "google_token": {
+    "access_token": "new_google_access_token",
+    "refresh_token": "new_google_refresh_token",
+    "scope": "new_google_scope",
+    "token_type": "Bearer",
+    "expiry_date": "2024-12-31T23:59:59Z"
+  },
+  "bitrix_token": {
+    "access_token": "new_bitrix_access_token",
+    "refresh_token": "new_bitrix_refresh_token"
+  }
+}
+
+# lấy thông tin domain bằng spreadsheetId
+GET http://localhost:3000/users/spreadsheet/19JrA40IggQ9CWs2_UafGdoumN-r4aVKr7-gtZASYf20

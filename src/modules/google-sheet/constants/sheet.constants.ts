@@ -1,0 +1,52 @@
+import { SheetType, SheetConfig, GridProperties } from '../interfaces/sheet-config.interface';
+
+export const SHEET_HEADERS = {
+  [SheetType.CONTACT]: [
+    'ID', 'LAST_NAME', 'SECOND_NAME', 'NAME', 'ADDRESS', 'ADDRESS_2', 
+    'ADDRESS_CITY', 'ADDRESS_PROVINCE', 'ADDRESS_POSTAL_CODE', 'ADDRESS_REGION',
+    'ADDRESS_COUNTRY', 'POST', 'COMMENTS', 'HONORIFIC', 'PHOTO', 'LEAD_ID', 'TYPE_ID', 
+    'SOURCE_ID', 'SOURCE_DESCRIPTION', 'COMPANY_ID', 'BIRTHDATE', 'EXPORT', 'HAS_PHONE', 
+    'HAS_EMAIL', 'HAS_IMOL', 'DATE_CREATE', 'DATE_MODIFY', 'ASSIGNED_BY_ID', 'CREATED_BY_ID', 
+    'MODIFY_BY_ID', 'OPENED', 'ORIGINATOR_ID', 'ORIGIN_ID', 'ORIGIN_VERSION', 'FACE_ID', 
+    'UTM_SOURCE', 'UTM_MEDIUM', 'UTM_CAMPAIGN', 'UTM_CONTENT', 'LAST_ACTIVITY_TIME', 
+    'LAST_ACTIVITY_BY', 'PHONE', 'EMAIL', 'WEB', 'IM', 'UTM_TERM', 'ADDRESS_LOC_ADDR_ID'
+  ],
+  [SheetType.REQUISITE]: [
+    'ID', 'ENTITY_TYPE_ID', 'ENTITY_ID', 'PRESET_ID', 'DATE_CREATE', 'DATE_MODIFY', 
+    'CREATED_BY_ID', 'MODIFY_BY_ID', 'NAME', 'CODE', 'XML_ID', 'ORIGINATOR_ID', 
+    'ACTIVE', 'ADDRESS_ONLY', 'SORT', 'RQ_NAME', 'RQ_FIRST_NAME', 'RQ_LAST_NAME', 
+    'RQ_SECOND_NAME', 'RQ_COMPANY_ID', 'RQ_COMPANY_NAME', 'RQ_COMPANY_FULL_NAME', 
+    'RQ_COMPANY_REG_DATE', 'RQ_DIRECTOR', 'RQ_ACCOUNTANT', 'RQ_CEO_NAME', 
+    'RQ_CEO_WORK_POS', 'RQ_CONTACT', 'RQ_EMAIL', 'RQ_PHONE', 'RQ_FAX', 
+    'RQ_IDENT_TYPE', 'RQ_IDENT_DOC', 'RQ_IDENT_DOC_SER', 'RQ_IDENT_DOC_NUM', 
+    'RQ_IDENT_DOC_PERS_NUM', 'RQ_IDENT_DOC_DATE', 'RQ_IDENT_DOC_ISSUED_BY', 
+    'RQ_IDENT_DOC_DEP_CODE', 'RQ_INN', 'RQ_KPP', 'RQ_USRLE', 'RQ_IFNS', 
+    'RQ_OGRN', 'RQ_OGRNIP', 'RQ_OKPO', 'RQ_OKTMO', 'RQ_OKVED', 'RQ_EDRPOU', 
+    'RQ_DRFO', 'RQ_KBE', 'RQ_IIN', 'RQ_BIN', 'RQ_ST_CERT_SER', 'RQ_ST_CERT_NUM', 
+    'RQ_ST_CERT_DATE', 'RQ_VAT_PAYER', 'RQ_VAT_ID', 'RQ_VAT_CERT_SER', 
+    'RQ_VAT_CERT_NUM', 'RQ_VAT_CERT_DATE', 'RQ_RESIDENCE_COUNTRY', 'RQ_BASE_DOC', 
+    'RQ_REGON', 'RQ_KRS', 'RQ_PESEL', 'RQ_LEGAL_FORM', 'RQ_SIRET', 'RQ_SIREN', 
+    'RQ_CAPITAL', 'RQ_RCS', 'RQ_CNPJ', 'RQ_STATE_REG', 'RQ_MNPL_REG', 'RQ_CPF'
+  ],
+  [SheetType.LOG]: ['Time', 'Action']
+} as const;
+
+export const DEFAULT_GRID_PROPERTIES: Readonly<GridProperties> = {
+  rowCount: 3000,
+  columnCount: 100
+} as const;
+
+export const SHEET_CONFIGS: ReadonlyArray<SheetConfig> = [
+  {
+    title: SheetType.CONTACT,
+    headers: SHEET_HEADERS[SheetType.CONTACT]
+  },
+  {
+    title: SheetType.REQUISITE,
+    headers: SHEET_HEADERS[SheetType.REQUISITE]
+  },
+  {
+    title: SheetType.LOG,
+    headers: SHEET_HEADERS[SheetType.LOG]
+  }
+] as const;

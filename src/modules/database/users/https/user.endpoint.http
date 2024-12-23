@@ -1,0 +1,78 @@
+### Lấy tất cả người dùng
+GET http://localhost:3000/users
+Accept: application/json
+
+###
+
+### Lấy một người dùng theo domain
+GET http://localhost:3000/users/domain3.com
+Accept: application/json
+
+###
+
+### Thêm SpreadsheetId vào người dùng
+PUT http://localhost:3000/users/domain3.com/spreadsheets/1AbCdEfGhIjKlMnOpQrStUvWxYz
+
+### Xóa SpreadsheetId khỏi người dùng
+DELETE http://localhost:3000/users/domain3.com/spreadsheets/1AbCdEfGhIjKlMnOpQrStUvWxYz
+###
+
+### Tạo một người dùng (domain) mới
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "domain": "domain6.com",
+  "subscription": {
+    "type": "trial",
+    "expiry": "2024-12-31T23:59:59Z"
+  },
+  "token": {
+    "bitrix_token": {
+      "access_token": "bitrix_access_token",
+      "refresh_token": "bitrix_refresh_token"
+    }
+  },
+  "email": "example1@example.com",
+  "phoneNumber": "0123456789",
+  "fullName": "Nguyễn Văn A"
+}
+
+### Cập nhật thông tin người dùng
+PATCH http://localhost:3000/users/domain6.com
+Content-Type: application/json
+
+{
+  "subscription": {
+    "type": "standard",
+    "expiry": "2024-12-31T23:59:59Z"
+  },
+  "email": "updated@example.com",
+  "fullName": "Đã cập nhật"
+}
+
+###
+
+### Cập nhật tokens
+PATCH http://localhost:3000/users/domain6.com/tokens
+Content-Type: application/json
+
+{
+  "google_token": {
+    "access_token": "new_google_access_token",
+    "refresh_token": "new_google_refresh_token",
+    "scope": "new_google_scope",
+    "token_type": "Bearer",
+    "expiry_date": "2024-12-31T23:59:59Z"
+  }
+  // "bitrix_token": {
+  //   "access_token": "new_bitrix_access_token",
+  //   "refresh_token": "new_bitrix_refresh_token"
+  // }
+}
+
+###
+
+### Xóa một người dùng
+DELETE http://localhost:3000/users/{{domain}}
+Accept: application/json

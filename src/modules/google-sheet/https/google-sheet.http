@@ -1,0 +1,32 @@
+### Chuyển hướng đến trang xác thực Google
+GET http://localhost:3000/google-sheet/auth
+Accept: application/json
+
+### Test kết nối với Google Sheet
+GET http://localhost:3000/google-sheet/test
+Accept: application/json
+
+### Tạo mới Google Spreadsheet
+# Tạo spreadsheet với tiêu đề và các sheet mặc định (google-sheet.service.ts phần SHEET_CONFIGS)
+POST http://localhost:3000/domain0.com/google-sheet/create
+Content-Type: application/json
+
+{
+    "title": "Test Spreadsheet 1",
+    "config": {
+        "access_token":"ya29.a0AeDClZAtpP7X-i6ieqFpd0U00WA_P-u7e18PZBXGaGhCeHuAdsr9dSQcaa7qJCTFTrDJ_h9UWC9iNrWm_cd4P0sN-syxyBMh9QyD-1dd9Q1fkE4aabHwQLfdiTxXj0aLCdF2fK3iU-62paPlxGPC6AMJXlKkK7SCwRcLu8aSaCgYKAZYSARASFQHGX2MiR3peN6VN1ULoYRPWXmoAXQ0175",
+        "refresh_token":"1//0eTuyCK9I8RPoCgYIARAAGA4SNwF-L9IrUL0WwND667pNfHLu0IP-mwB_2l-iXefQGKzNfrCecYAOv4SRg5As3N14JHp5iD_UZls",
+        "scope":"https://www.googleapis.com/auth/spreadsheets",
+        "token_type":"Bearer",
+        "expiry_date":1733388882369
+    }
+}
+
+### Callback URL cho xác thực Google (Chỉ để tham khảo, không gọi trực tiếp)
+GET http://localhost:3000/google-sheet/auth/callback?code=4/0AfJohXnLWXXXXXX-XXXXXXXXXXXXXXX
+Accept: application/json
+
+### Chuyển hướng đến trang xác thực Google với domain
+GET http://localhost:3000/auth/google/domain0.com
+Accept: application/json 
+
