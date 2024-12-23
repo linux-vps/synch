@@ -1,47 +1,7 @@
 ## Description
-
-- Lưu domain, token vào CSDL mongodb
-- Lưu google token vào CSDL,
-- Cấp quyền cho app để truy cập google sheet
-- Refresh token
-
-khi tương tác với google sheet hay crm đều cần truyền thêm config vào request
- ```bash
- ### Thêm một liên hệ mới vào crm
-POST http://localhost:3000/test/contact/add
-Content-Type: application/json
-
-{
-  "config": {
-    "oauth": {
-      "domain": "domain",
-      "refresh_token": "refresh_token",
-      "access_token": "access_token"
-    }
-  },
-  "fields": {
-    "NAME": "Van A",
-    "LAST_NAME": "Nguyen"
-  }
-}
-
-### Tạo mới Google Spreadsheet
-# Tạo spreadsheet với tiêu đề và các sheet mặc định (google-sheet.service.ts phần SHEET_CONFIGS)
-POST http://localhost:3000/google-sheet/create
-Content-Type: application/json
-
-{
-    "title": "Test create Spreadsheet",
-    "config": {
-        "access_token":"xxxxx",
-        "refresh_token":"xxxxx",
-        "scope":"https://www.googleapis.com/auth/spreadsheets",
-        "token_type":"Bearer",
-        "expiry_date":1733388882369
-    }
-}
- ```
-
+```bash
+Chưa cập nhật ...
+```
 ## Project setup
 
 ```bash
