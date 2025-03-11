@@ -1,5 +1,5 @@
 ### Chuyển hướng đến trang xác thực Google với domain
-GET http://localhost:3000/auth/google/domain0.com
+GET http://localhost:3000/auth/google/domain6.com
 Accept: application/json 
 
 ### Tạo mới Google Spreadsheet
@@ -8,7 +8,7 @@ Accept: application/json
 POST http://localhost:3000/google-sheet
 Content-Type: application/json
 { 
-    "domain": "domain0.com",
+    "domain": "domain6.com",
     "title": "Test Spreadsheet 1"
 }
 
@@ -18,8 +18,6 @@ Accept: application/json
 
 ### Xóa SpreadsheetId khỏi domain
 DELETE http://localhost:3000/users/domain0.com/1bGVuzuZwQLVOGYmGo-PAcv37vIPitjugWq7y-tF7dwg
-
-###
 
 ### Cập nhật tokens
 PATCH http://localhost:3000/users/tokens

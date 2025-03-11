@@ -11,4 +11,4 @@ export class GoogleSheetServiceFactory {
   createService(config: GoogleSheetConfig, usersService: UsersService): GoogleSheetService {
     return new GoogleSheetService(config, this.googleAuthProvider, usersService );
   }
-} 
+}  

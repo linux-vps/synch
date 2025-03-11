@@ -34,5 +34,4 @@ export default class GoogleSheetConnectorDto {
   constructor(data: Partial<GoogleSheetConnectorDto>) {
     Object.assign(this, data);
   }
-  
 }

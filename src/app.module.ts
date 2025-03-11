@@ -16,9 +16,6 @@ import { googleCredentialsConfig, googleOAuth2Config } from './config/google-cre
 import { ScheduleModule } from '@nestjs/schedule';
 import { TokenRefreshService } from './modules/token-refresh/token-refresh.service';
 
-
-
-
 @Module({
   imports: [ContactModule, CompanyModule, AuthModule, 
     ConfigModule.forRoot({

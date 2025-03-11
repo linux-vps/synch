@@ -14,7 +14,7 @@ export interface GoogleOAuth2ConfigDto {
 
 /**
  * Nhà cung cấp xác thực Google qua OAuth2.
- */
+ */ 
 @Injectable()
 export class GoogleAuthProvider {
     private oauth2Client: OAuth2Client;

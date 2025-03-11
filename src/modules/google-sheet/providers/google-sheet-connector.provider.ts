@@ -231,6 +231,7 @@ export class GoogleSheetConnectorProvider {
             spreadsheetId,
             range,
             valueInputOption,
+            
             requestBody: {
                 values
             }
